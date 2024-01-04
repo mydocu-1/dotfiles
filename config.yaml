@@ -4,6 +4,7 @@ entries:
   gitconfig: .gitconfig
   gitignore_global: .gitignore_global
   i3: .config/i3
+  tmux: .config/tmux
   vim-autoload: .vim/autoload
   vim-bin: .vim/bin
   vim-colors: .vim/colors
