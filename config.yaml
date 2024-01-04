@@ -1,6 +1,7 @@
 # Files are "installed" as hard links.
 # Directories are "installed" as symlinks.
 entries:
+  dir_colors: .dir_colors
   gitconfig: .gitconfig
   gitignore_global: .gitignore_global
   i3: .config/i3
