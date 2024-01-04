@@ -1,0 +1,43 @@
+!
+! ~/.Xresources
+!
+! After modification merge file settings with current X settings:
+!   xrdb -merge ~/.Xresources
+! or replace current X settings with file settings:
+!  xrdb ~/.Xresources
+!
+
+Xft.dpi: 120
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! --- special colors ---
+*background:	#000000
+*foreground:	#00FF00
+
+! -- owerride colors --
+! bright_green
+! default is #00FF00
+! overriding to differ from foreground
+*color10:       #87ff87
+
+! ----------------------
+! --- URxvt settings ---
+! ----------------------
+! do not show scrollbar
+URxvt.scrollBar:	false
+! do not show border
+URxvt.borderless:	true
+URxvt.font:		xft:DejaVu Sans Mono:pixelsize=22
+
+! ----------------------
+! --- clickable URLs ---
+! ----------------------
+URxvt.perl-ext:  default,matcher
+URxvt.url-launcher:	google-chrome-stable
+URxvt.matcher.button:	C1
+

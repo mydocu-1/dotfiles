@@ -1,0 +1,165 @@
+# i3 config file (v4)
+#
+# For a complete reference see http://i3wm.org/docs/userguide.html
+#
+# Should you change your keyboard layout somewhen,
+# delete this file and re-run i3-config-wizard(1).
+
+
+#---------------------------------------#
+# Global vars
+#---------------------------------------#
+# Set modifier key to Win
+set $mod Mod4
+
+# Set I3 home dir
+set $i3_home ~/.config/i3
+
+#---------------------------------------#
+# Look-n-feel
+#---------------------------------------#
+# Font for window titles and i3bar.
+# ISO 10646 = Unicode
+font pango:DejaVu Sans, -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+# Don't show window title for rxvt + tmux
+for_window [class="URxvt" instance="tmux"] border pixel 1
+
+#---------------------------------------#
+# Key bindings
+#---------------------------------------#
+
+# EXECUTION
+
+# start a terminal with new tmux session
+bindsym $mod+Return exec urxvt -name tmux -e tmux new
+
+# open dmenu with ~
+bindsym $mod+grave exec dmenu_run
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+
+# CONTAINERS
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# focus the parent container
+bindsym $mod+w focus parent
+
+# focus child container
+bindsym $mod+s focus child
+
+# move focused container
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split with vertical line
+bindsym $mod+g split v
+
+# split with horizontal line
+bindsym $mod+v split h
+
+# change container layout
+bindsym $mod+a layout toggle split tabbed
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# make fullscreen a floating sticky window
+bindsym $mod+x fullscreen disable; floating enable; resize set 800 600; sticky enable; move window to position 1760 50
+
+
+#WORKSPACES
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# lock screen
+bindsym F12 exec --no-startup-id sleep 1 && xset dpms force suspend
+
+# multimedia keys
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 '-5%'
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 '+5%'
+bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 toggle
+
+# fix for X1 carbon multimedia keys
+bindsym $mod+F2 exec /usr/bin/pactl set-sink-volume 0 '-5%'
+bindsym $mod+F3 exec /usr/bin/pactl set-sink-volume 0 '+5%'
+bindsym $mod+F1 exec /usr/bin/pactl set-sink-volume 0 toggle
+
+# resize window
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing down will shrink the window’s height.
+        # Pressing up will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+#---------------------------------------#
+# i3 bar
+#---------------------------------------#
+bar {
+        status_command i3status --config $i3_home/i3status.conf
+        mode hide
+        modifier $mod
+}
+
+exec --no-startup-id xss-lock -- $i3_home/bin/i3lock_dpms.sh
+

@@ -1,0 +1,14 @@
+# Files are "installed" as hard links.
+# Directories are "installed" as symlinks.
+entries:
+  gitconfig: .gitconfig
+  gitignore_global: .gitignore_global
+  i3: .config/i3
+  vim-autoload: .vim/autoload
+  vim-bin: .vim/bin
+  vim-colors: .vim/colors
+  vimrc: .vimrc
+  xinitrc: .xinitrc
+  Xresources: .Xresources
+  xserverrc: .xserverrc
+

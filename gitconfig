@@ -1,0 +1,21 @@
+# Global git config.
+
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+# Github config.
+[includeIf "gitdir:~/workspace/github/"]
+	path = ~/workspace/github/.gitconfig-github
+# Github user config sets up github identity, like:
+# [user]
+#   name = John Doe
+#   email = a@a.com
+# [github]
+#   user = username
+# [core]
+#   sshCommand = "ssh -i ~/.ssh/my_private_key"
+
