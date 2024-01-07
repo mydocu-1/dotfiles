@@ -1,6 +1,6 @@
 vim9script
 
-# Color constants based on https:color//jonasjacek.github.io/colors/
+# Color constants based on https://jonasjacek.github.io/colors/
 #
 # Due to duplicate color names, var names are prefixed with xterm color number.
 

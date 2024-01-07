@@ -51,11 +51,11 @@ RESET 0 # reset to "normal" color
 DIR 01;38;5;24 # directory
 STICKY 37;48;5;24 # dir with the sticky bit set (+t) and not other-writable
 STICKY_OTHER_WRITABLE 37;48;5;28 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 30;48;5;28 # dir that is other-writable (o+w) and not sticky
+OTHER_WRITABLE 01;38;5;88;48;5;28 # dir that is other-writable (o+w) and not sticky
 
 # Special file permissions
 SETUID 01;37;41 # file that is setuid (u+s)
-SETGID 01;37;48;5;166 # file that is setgid (g+s)
+SETGID 01;37;48;5;202 # file that is setgid (g+s)
 
 # Link
 LINK 01;33 # symbolic link. (Set to 'target' instead of a
@@ -65,134 +65,135 @@ MISSING 00 # ... and the files they point to
 MULTIHARDLINK 04 # regular file with more than one link
 
 # Special file types
-FIFO 01;35 # pipe
-SOCK 01;35 # socket
-DOOR 01;35 # door
-BLK 01;38;5;221 # block device driver
-CHR 01;38;5;221 # character device driver
+FIFO 00;37;45 # pipe
+SOCK 00;37;45 # socket
+DOOR 00;37;45 # door
+BLK 00;30;43 # block device driver
+CHR 00;30;43 # character device driver
 CAPABILITY 30;41 # file with capability
 
 # Executables
 EXEC  01;36
 .sh   00;36 # Non-executable .sh
 
-# archives or compressed (orange)
-.7z   00;38;5;166
-.ace  00;38;5;166
-.alz  00;38;5;166
-.arc  00;38;5;166
-.arj  00;38;5;166
-.bz   00;38;5;166
-.bz2  00;38;5;166
-.cab  00;38;5;166
-.cpio 00;38;5;166
-.deb  00;38;5;166
-.dwm  00;38;5;166
-.dz   00;38;5;166
-.ear  00;38;5;166
-.esd  00;38;5;166
-.gz   00;38;5;166
-.jar  00;38;5;166
-.lha  00;38;5;166
-.lrz  00;38;5;166
-.lz   00;38;5;166
-.lz4  00;38;5;166
-.lzh  00;38;5;166
-.lzma 00;38;5;166
-.lzo  00;38;5;166
-.rar  00;38;5;166
-.rpm  00;38;5;166
-.rz   00;38;5;166
-.sar  00;38;5;166
-.swm  00;38;5;166
-.t7z  00;38;5;166
-.tar  00;38;5;166
-.taz  00;38;5;166
-.tbz  00;38;5;166
-.tbz2 00;38;5;166
-.tgz  00;38;5;166
-.tlz  00;38;5;166
-.txz  00;38;5;166
-.tz   00;38;5;166
-.tzo  00;38;5;166
-.tzst 00;38;5;166
-.war  00;38;5;166
-.wim  00;38;5;166
-.xz   00;38;5;166
-.z    00;38;5;166
-.zip  00;38;5;166
-.zoo  00;38;5;166
-.zst  00;38;5;166
+# archives or compressed (gold)
+.7z   00;38;5;214
+.ace  00;38;5;214
+.alz  00;38;5;214
+.arc  00;38;5;214
+.arj  00;38;5;214
+.bz   00;38;5;214
+.bz2  00;38;5;214
+.cab  00;38;5;214
+.cpio 00;38;5;214
+.deb  00;38;5;214
+.dwm  00;38;5;214
+.dz   00;38;5;214
+.ear  00;38;5;214
+.esd  00;38;5;214
+.gz   00;38;5;214
+.jar  00;38;5;214
+.img  00;38;5;214
+.lha  00;38;5;214
+.lrz  00;38;5;214
+.lz   00;38;5;214
+.lz4  00;38;5;214
+.lzh  00;38;5;214
+.lzma 00;38;5;214
+.lzo  00;38;5;214
+.rar  00;38;5;214
+.rpm  00;38;5;214
+.rz   00;38;5;214
+.sar  00;38;5;214
+.swm  00;38;5;214
+.t7z  00;38;5;214
+.tar  00;38;5;214
+.taz  00;38;5;214
+.tbz  00;38;5;214
+.tbz2 00;38;5;214
+.tgz  00;38;5;214
+.tlz  00;38;5;214
+.txz  00;38;5;214
+.tz   00;38;5;214
+.tzo  00;38;5;214
+.tzst 00;38;5;214
+.war  00;38;5;214
+.wim  00;38;5;214
+.xz   00;38;5;214
+.z    00;38;5;214
+.zip  00;38;5;214
+.zoo  00;38;5;214
+.zst  00;38;5;214
 
-# image formats
-.bmp    00;38;5;219
-.cgm    00;38;5;219
-.dl     00;38;5;219
-.emf    00;38;5;219
-.gif    00;38;5;219
-.jpeg   00;38;5;219
-.jpg    00;38;5;219
-.mjpeg  00;38;5;219
-.mjpg   00;38;5;219
-.mng    00;38;5;219
-.pbm    00;38;5;219
-.pcx    00;38;5;219
-.pgm    00;38;5;219
-.png    00;38;5;219
-.ppm    00;38;5;219
-.svg    00;38;5;219
-.svgz   00;38;5;219
-.tga    00;38;5;219
-.tif    00;38;5;219
-.tiff   00;38;5;219
-.webp   00;38;5;219
-.xbm    00;38;5;219
-.xcf    00;38;5;219
-.xpm    00;38;5;219
-.xwd    00;38;5;219
-.yuv    00;38;5;219
+# image formats (pink)
+.bmp    00;38;5;218
+.cgm    00;38;5;218
+.dl     00;38;5;218
+.emf    00;38;5;218
+.gif    00;38;5;218
+.jpeg   00;38;5;218
+.jpg    00;38;5;218
+.mjpeg  00;38;5;218
+.mjpg   00;38;5;218
+.mng    00;38;5;218
+.pbm    00;38;5;218
+.pcx    00;38;5;218
+.pgm    00;38;5;218
+.png    00;38;5;218
+.ppm    00;38;5;218
+.svg    00;38;5;218
+.svgz   00;38;5;218
+.tga    00;38;5;218
+.tif    00;38;5;218
+.tiff   00;38;5;218
+.webp   00;38;5;218
+.xbm    00;38;5;218
+.xcf    00;38;5;218
+.xpm    00;38;5;218
+.xwd    00;38;5;218
+.yuv    00;38;5;218
 
 # audio formats (purple)
-.aac    00;38;5;97
-.au     00;38;5;97
-.flac   00;38;5;97
-.m4a    00;38;5;97
-.mid    00;38;5;97
-.midi   00;38;5;97
-.mka    00;38;5;97
-.mp3    00;38;5;97
-.mpc    00;38;5;97
-.oga    00;38;5;97
-.ogg    00;38;5;97
-.opus   00;38;5;97
-.ra     00;38;5;97
-.spx    00;38;5;97
-.wav    00;38;5;97
-.xspf   00;38;5;97
+.aac    00;38;5;75
+.au     00;38;5;75
+.flac   00;38;5;75
+.m4a    00;38;5;75
+.mid    00;38;5;75
+.midi   00;38;5;75
+.mka    00;38;5;75
+.mp3    00;38;5;75
+.mpc    00;38;5;75
+.oga    00;38;5;75
+.ogg    00;38;5;75
+.opus   00;38;5;75
+.ra     00;38;5;75
+.spx    00;38;5;75
+.wav    00;38;5;75
+.xspf   00;38;5;75
 
 # video formats (audio + bold)
-.asf    01;38;5;97
-.avi    01;38;5;97
-.flc    01;38;5;97
-.fli    01;38;5;97
-.flv    01;38;5;97
-.gl     01;38;5;97
-.m2v    01;38;5;97
-.m4v    01;38;5;97
-.mkv    01;38;5;97
-.mov    01;38;5;97
-.mp4    01;38;5;97
-.mp4v   01;38;5;97
-.mpeg   01;38;5;97
-.mpg    01;38;5;97
-.nuv    01;38;5;97
-.ogm    01;38;5;97
-.ogv    01;38;5;97
-.ogx    01;38;5;97
-.qt     01;38;5;97
-.rm     01;38;5;97
-.rmvb   01;38;5;97
-.vob    01;38;5;97
-.webm   01;38;5;97
-.wmv    01;38;5;97
+.asf    01;38;5;75
+.avi    01;38;5;75
+.flc    01;38;5;75
+.fli    01;38;5;75
+.flv    01;38;5;75
+.gl     01;38;5;75
+.m2v    01;38;5;75
+.m4v    01;38;5;75
+.mkv    01;38;5;75
+.mov    01;38;5;75
+.mp4    01;38;5;75
+.mp4v   01;38;5;75
+.mpeg   01;38;5;75
+.mpg    01;38;5;75
+.nuv    01;38;5;75
+.ogm    01;38;5;75
+.ogv    01;38;5;75
+.ogx    01;38;5;75
+.qt     01;38;5;75
+.rm     01;38;5;75
+.rmvb   01;38;5;75
+.vob    01;38;5;75
+.webm   01;38;5;75
+.wmv    01;38;5;75
 

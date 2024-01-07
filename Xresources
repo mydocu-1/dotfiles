@@ -17,13 +17,7 @@ Xft.rgba: rgb
 
 ! --- special colors ---
 *background:	#000000
-*foreground:	#00FF00
-
-! -- owerride colors --
-! bright_green
-! default is #00FF00
-! overriding to differ from foreground
-*color10:       #87ff87
+*foreground:	#00d700
 
 ! ----------------------
 ! --- URxvt settings ---
