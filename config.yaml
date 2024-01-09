@@ -4,6 +4,7 @@ entries:
   dir_colors: .dir_colors
   gitconfig: .gitconfig
   gitignore_global: .gitignore_global
+  fish: .config/fish
   i3: .config/i3
   tmux: .config/tmux
   vim-autoload: .vim/autoload
