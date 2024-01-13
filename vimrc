@@ -163,20 +163,6 @@ cnoremap <expr> <C-k> wildmenumode() ? "\<right>" : "\<C-k>"
 
 
 " -----------------------------------------------------------------------------
-"  CUSTOM FUNCTIONS
-" -----------------------------------------------------------------------------
-" Function to find a syntax group name for text under cursor
-function! s:SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name') . ' -> ' . synIDattr(synIDtrans(v:val), 'name')")
-endfunc
-" Command to find highlight group name
-:command! HiGroup :call <SID>SynStack()
-
-
-" -----------------------------------------------------------------------------
 " PLUGIN SETTINGS
 " -----------------------------------------------------------------------------
 
@@ -260,6 +246,16 @@ endfunction
 " Experiments
 " --------------------------
 
+" Function to find a syntax group name for text under cursor
+function! s:SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), "synIDattr(v:val, 'name') . ' -> ' . synIDattr(synIDtrans(v:val), 'name')")
+endfunc
+nnoremap ? :call <SID>SynStack()<CR>
+
+" Tmux-like select pane
 function! s:SelectPane()
   let l:nr = 1
   let l:num = winnr('$')
