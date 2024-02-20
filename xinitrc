@@ -34,7 +34,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # Keybord layouts. Also remap CapsLock to Ctrl
-setxkbmap -option "" -option "ctrl:nocaps,shift:both_capslock,grp:ctrls_toggle,grp_led:caps" us,ru
+setxkbmap -option "" -option "ctrl:nocaps,shift:both_capslock,grp:ctrls_toggle,grp_led:caps" -layout us,by -variant ,intl
 # Short-pressed Ctrl behaves like Escape
 xcape -e 'Control_L=Escape'
 
