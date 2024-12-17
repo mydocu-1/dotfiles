@@ -7,10 +7,10 @@ entries:
   fish: .config/fish
   i3: .config/i3
   tmux: .config/tmux
-  vim-autoload: .vim/autoload
-  vim-bin: .vim/bin
-  vim-colors: .vim/colors
-  vimrc: .vimrc
+  vim/autoload: .vim/autoload
+  vim/bin: .vim/bin
+  vim/colors: .vim/colors
+  vim/vimrc: .vimrc
   xinitrc: .xinitrc
   Xresources: .Xresources
   xserverrc: .xserverrc
