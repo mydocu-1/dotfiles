@@ -142,12 +142,12 @@ nnoremap <C-k> :bn<CR>
 nnoremap gT :bp<CR>
 nnoremap <C-j> :bp<CR>
 
-" <leader>x to close split or buffer
-noremap <expr> <leader>x (winnr('$') > 1) ? ":q\<CR>" : ":bdel\<CR>"
+" <C-w>x to close split or buffer
+noremap <expr> <C-w>x (winnr('$') > 1) ? ":q\<CR>" : ":bdel\<CR>"
 
-" <leader>Shift-X to re-open last closed buffer
+" <C-w>Shift-X to re-open last closed buffer
 autocmd BufDelete * let g:latest_deleted_buffer = expand("<afile>:p")
-nnoremap <leader>X :e <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
+nnoremap <silent> <C-w>X :e <C-R>=fnameescape(g:latest_deleted_buffer)<CR><CR>
 
 " -----------------------------------------------------------------------------
 "  WILD MENU
@@ -283,5 +283,5 @@ function! s:SelectPane()
     echom "Invalid selection: " l:nr
   endif
 endfunction
-nnoremap <c-w>q :call <SID>SelectPane()<CR>
+nnoremap <C-w>q :call <SID>SelectPane()<CR>
 
